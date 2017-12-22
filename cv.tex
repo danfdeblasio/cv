@@ -8,6 +8,7 @@
 \usepackage{tabularx, multirow}
 \usepackage{titlesec}
 \usepackage{datetime}
+\usepackage{xstring}
 
 \usepackage{enumitem}
 \setitemize{itemsep=0pt}
@@ -50,6 +51,10 @@
 
 \titleformat*{\section}{\LARGE\itshape\titlerule\bfseries}
 
+%format my name in the bibliographies
+\def\FormatName#1{%
+  \IfSubStr*{#1}{DeBlasio}{\underline{#1}}{#1}%
+}
   
 
 % Define bibliographies.
@@ -141,11 +146,11 @@ Cloudspace $\cdot$ Orlando, FL $\cdot$ 8/2005--8/2007
 \end{itemize}
 
 % Publications.
-\bibliographystylej{unsrt}
-\bibliographystylec{unsrt}
-\bibliographystyleo{unsrt}
-\bibliographystyleb{unsrt}
-\bibliographystylep{unsrt}
+\bibliographystylej{unsrt_custom}
+\bibliographystylec{unsrt_custom}
+\bibliographystyleo{unsrt_custom}
+\bibliographystyleb{unsrt_custom}
+\bibliographystylep{unsrt_custom}
 
 \nocitej{DK18b}
 \nociteb{DK18a}

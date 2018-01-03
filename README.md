@@ -20,4 +20,5 @@ LaTeX dependencies:
 
 *   `multibib` for multiple bibliographies
 
+I have updated the standard unsrt bibliography format to use the function `\FormatName` which must be defined inside the `cv.tex` file.
 

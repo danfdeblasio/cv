@@ -20,5 +20,4 @@ LaTeX dependencies:
 
 *   `multibib` for multiple bibliographies
 
-For more about me, please visit <http://stevetjoa.com>.
 

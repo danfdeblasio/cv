@@ -14,6 +14,22 @@
 \setitemize{itemsep=0pt}
 \setlist[itemize]{noitemsep, topsep=0pt}
 
+\newenvironment{hangingpar}[1]
+  {\begin{list}
+          {}
+          {\setlength{\itemindent}{-#1}%%'
+           \setlength{\leftmargin}{#1}%%'
+           \setlength{\itemsep}{0pt}%%'
+           \setlength{\parsep}{\parskip}%%'
+           \setlength{\topsep}{\parskip}%%'
+           }
+    \setlength{\parindent}{-#1}%%
+    \item[]
+  }
+  {\end{list}}
+  
+  
+
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
 % Set margins.
@@ -158,7 +174,7 @@ Cloudspace $\cdot$ Orlando, FL $\cdot$ 8/2005--8/2007
 \nocitej{DK18d}
 \nocitec{DK18c}
 \nocitec{MDK18}
-\nocitej{DK18b}
+%\nocitej{DK18b}
 \nociteb{DK18a}
 \nociteo{AFR*18}
 \nociteo{RAM*17}
@@ -200,7 +216,7 @@ Cloudspace $\cdot$ Orlando, FL $\cdot$ 8/2005--8/2007
 
 
 \section*{Released Software}
-
+\subparagraph{Scallop Parameter Advising}						github.com/Kingsford-Group/scallopadvising
 \subparagraph{Feature-based Accuracy Estimator (Facet)} 			facet.cs.arizona.edu
 \subparagraph{Opal v3.0}										opal.cs.arizona.edu 
 \subparagraph{Sister Clade Extractor (SiClE)}						eebweb.arizona.edu/sicle/
@@ -231,30 +247,41 @@ Cloudspace $\cdot$ Orlando, FL $\cdot$ 8/2005--8/2007
 
 \section*{Service and Leadership Activities}
 
-\subparagraph{Member} International Society for Computational Biology (ISCB), Association for Computing Machinery (ACM), ACM SIGBio, ACM SIGAct, Upsilon Pi Epsilon
-\subparagraph{Committee Member} International conferences and workshops.
+
+\subparagraph{Member} Professional organizations
 \begin{itemize}
-    \item \textbf{Organizing Committee} ISCB SCS 2014, 2015, 2017, ISCB SCS-Africa 2017 
-    \item \textbf{Program Committee} IEEE ICCABS 2017
-    \item \textbf{Student Activities Co-Chair} ACM-BCB 2016
-    %\item \textbf{Technical Program Committee} IEEE WIAMIS 2013, IEEE ICME (2011, 2012)
+\item International Society for Computational Biology (ISCB)
+\item Association for Computing Machinery (ACM), ACM SIGBio, ACM SIGAct
+\item Upsilon Pi Epsilon
 \end{itemize}
 
-\subparagraph{Reviewer} %Eighteen journal and seventy-seven conference submissions. 
-\begin{itemize}
+\subparagraph{Committee Member} International conferences and workshops.
+\begin{itemize}[leftmargin=!,labelindent=5pt,itemindent=-15pt]
+    \item \textbf{Organizing Committee} ISCB SCS 2014, 2015, 2017; 
+    ISCB SCS-Africa 2017;
+    ISCB SCS-Latin America 2018;  
+    Workshop on the Future of Algorithms in Biology (FAB) 2018
+    \item \textbf{Program Committee} IEEE ICCABS 2017
+    \item \textbf{Student Activities Co-Chair} ACM-BCB 2016
+\end{itemize}
+
+\subparagraph{Reviewer} 
+\begin{itemize}[leftmargin=!,labelindent=5pt,itemindent=-15pt]
     \item \textbf{Journals} \ 
         Bioinformatics,
         PLOS One, 
         PeerJ, 
-        Nucleic Acids Research. 
+        Nucleic Acids Research,
+        Journal of Health Informatics Research. 
     \item \textbf{Conferences} \ 
-        ISCB SCS (2014-2017), % 7 
-        ISCB LA-SCS (2014), % 8
-        ISCB ESCS (2016), 
-	RECOMB (2017,18), % 1 & 1
+        ISCB SCS (2014-17), % 7 
+        ISCB SCS-LA (2014), % 8
+        ISCB ESCS (2016), % 6?
+	RECOMB (2017-18), % 1 & 1
 	WABI (2017), % 1
 	ISMB/ECCB (2017), %1
-    	 IEEE ICCABS (2017). % 3
+    	IEEE ICCABS (2017), % 3
+	ISMB (2018). %3
 \end{itemize}
 
 \subparagraph{Conference Volunteer}
@@ -339,57 +366,5 @@ University of Central Florida $\cdot$ Orlando, FL
     \item Burnett Honors College Summer Institute (high school programming summer camp), Summer 2007.
     \item Introduction to C Programming, Fall 2006
 \end{itemize}
-
-
-
-\iffalse
-
-\section*{Computer Skills}
-
-\begin{itemize}
-    \item \textbf{Languages} \ Python, C, Matlab/Octave, Java, PHP, HTML/XML
-    \item \textbf{Version Control} \ Git, Github, Mercurial, Bitbucket, SVN, SourceRepo
-    \item \textbf{OSs, Servers, Databases} \ Unix/Linux, Mac OS X, Windows, Apache, MySQL, SQLite 
-    \item \textbf{Web Hosting} Amazon Web Services EC2/S3, Linode, Slicehost, DigitalOcean
-    \item \textbf{Hardware} \ TI TMS320C6701 EVM
-\end{itemize}
-
-
-\section*{Graduate Coursework}
-
-\begin{itemize} 
-    \item \textbf{Signal Processing} \ Advanced Digital Signal Processing, Digital Image Processing, Space-Time Signal Processing (A+), Auditory Scene Analysis (A+) 
-    \item \textbf{Machine Learning} \ Statistical Pattern Recognition (A+), Pattern Recognition in Temporal Data 
-    \item \textbf{Communications} \ Random Processes, Information Theory, Estimation and Detection Theory, Random~Graphs 
-    \item \textbf{Optimization and Controls} \ System Theory, Optimal Control, Advanced Numerical Optimization, Convex Optimization (A+), Networked Control Systems, Foundations of Optimization 
-    \item \textbf{Computing} \ Numerical Analysis, Digital Computer Design, Real-Time Collision Detection 
-    \item \textbf{Miscellaneous} \ Future Faculty Program Seminar I/II/III, Teaching Practicum (A+), Technology Law (A+) 
-\end{itemize}
-
-
-\section*{Internships}
-
-\subparagraph{Intern, Satellite Management Systems}
-Intelsat $\cdot$ Washington, DC $\cdot$ 6/2004--8/2004
-\begin{itemize}
-    \item Performed software tests on telemetry and flight dynamic commanding for Loral Ground Network Systems integration. Assisted with maintenance of software documentation.
-\end{itemize}
-
-\subparagraph{Intern, Satellite Engineering}
-Intelsat $\cdot$ Washington, DC $\cdot$ 6/2002--11/2002
-\begin{itemize}
-    \item Performed software and database testing for the IS-X satellite series. Revised acceptance test plans and software requirement specifications.
-\end{itemize}
-
-
-\section*{Miscellaneous}
-
-\begin{itemize}
-    \item Born in New Jersey, USA. USA citizen.
-    \item Studied violin under Ms. Ayako Hosoi (retired, New Jersey SO) and Dr. James Stern (U. Maryland).
-    \item Violinist with the San Francisco Civic Symphony (9/2012--present).
-\end{itemize}
-
-\fi
 
 \end{document}

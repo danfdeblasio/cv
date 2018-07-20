@@ -4,7 +4,8 @@ pdflatex cv.tex
 bibtex c.aux
 bibtex j.aux
 bibtex b.aux
-bibtex o.aux
+bibtex t.aux
+bibtex s.aux
 bibtex p.aux
 pdflatex cv.tex
 pdflatex cv.tex

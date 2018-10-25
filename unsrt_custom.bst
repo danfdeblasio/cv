@@ -31,6 +31,7 @@ ENTRY
     type
     volume
     year
+    conf
   }
   {}
   { label }
@@ -93,10 +94,10 @@ FUNCTION {output.bibitem}
 }
 
 FUNCTION {fin.entry}
-{ add.period$
-  write$
-  newline$
-}
+{ 
+write$
+
+  }
 
 FUNCTION {new.block}
 { output.state before.all =
@@ -556,8 +557,10 @@ FUNCTION {article}
       format.pages output
     }
   if$
-  new.block
-  note output
+  note empty$
+  {add.period$}
+  {note output}
+  if$
   fin.entry
 }
 
@@ -591,6 +594,7 @@ FUNCTION {book}
   format.date "year" output.check
   new.block
   note output
+  add.period$
   fin.entry
 }
 
@@ -701,6 +705,7 @@ FUNCTION {inproceedings}
   if$
   new.block
   note output
+  add.period$
   fin.entry
 }
 
@@ -753,6 +758,7 @@ FUNCTION {mastersthesis}
   format.date "year" output.check
   new.block
   note output
+  add.period$
   fin.entry
 }
 

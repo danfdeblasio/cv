@@ -1,0 +1,122 @@
+\documentclass[11pt]{article}
+
+\usepackage{graphicx}
+\usepackage[colorlinks,urlcolor=blue]{hyperref}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage[resetlabels]{multibib}
+\usepackage{tabularx, multirow}
+\usepackage{titlesec}
+\usepackage{datetime}
+\usepackage{xstring}
+\usepackage{xspace}
+\usepackage{scrextend}
+
+\usepackage{enumitem}
+\setitemize{itemsep=0pt}
+\setlist[itemize]{noitemsep, topsep=0pt}
+
+\hyphenation{StringBio}
+
+
+\newenvironment{hangingpar}[1]
+  {\begin{list}
+          {}
+          {\setlength{\itemindent}{-#1}%%'
+           \setlength{\leftmargin}{#1}%%'
+           \setlength{\itemsep}{0pt}%%'
+           \setlength{\parsep}{\parskip}%%'
+           \setlength{\topsep}{\parskip}%%'
+           }
+    \setlength{\parindent}{-#1}%%
+    \item[]
+  }
+  {\end{list}}
+  
+  
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\newcommand{\bigdot}{$\cdot$\xspace}
+
+% Set margins.
+\oddsidemargin=0.0in
+\evensidemargin=0.0in
+\textwidth=6.5in
+\voffset=-0.125in
+\headheight=0.0in
+\topmargin=0.0in
+\textheight=9.0in
+
+% Define colors.
+\definecolor{addresscolor}{rgb}{0.2,0.2,0.2}
+\definecolor{datecolor}{rgb}{0.5,0.5,0.5}
+
+\newdateformat{monthyeardate}{%
+  \monthname[\THEMONTH] \THEYEAR}
+  
+
+% Turn off page numbering.
+\pagestyle{fancy}
+\fancyhf{}
+\lfoot{\datestyle Dan F.DeBlasio}
+\cfoot{\datestyle \thepage}
+\rfoot{\datestyle \monthyeardate\today}
+\renewcommand{\headrulewidth}{0.0pt}
+
+% Set parameters and content.
+\newcommand{\namestyle}{\Huge \scshape}
+\newcommand{\deptstyle}{\footnotesize \rmfamily \scshape}
+\newcommand{\addressstyle}{\color{addresscolor} \footnotesize \rmfamily \upshape}
+\newcommand{\datestyle}{\color{datecolor} \footnotesize \rmfamily \upshape}
+
+% Remove list labels.
+\renewcommand{\labelitemi}{}
+\renewcommand{\labelitemii}{}
+
+\titleformat*{\section}{\LARGE\itshape\titlerule\bfseries}
+
+%format my name in the bibliographies
+\def\FormatName#1{%
+  \noexpandarg
+  \IfSubStr*{#1}{DeBlasio}{\underline{#1}}{#1}%
+}
+  
+
+
+\begin{document}
+
+\nocite{HND*18}
+\nocite{DK18c}
+\nocite{DK18d}
+\nocite{MDK18}
+\nocite{MDK18}
+%\nocite{DK18b}
+\nocite{DK18a}
+\nocite{AFR*18}
+\nocite{RAM*17}
+\nocite{DK17b}
+\nocite{DK17a}
+\nocite{OFW*17}
+\nocite{WHF*16}
+\nocite{DK16}
+\nocite{D16}
+\nocite{DW16}
+\nocite{DK15c}
+\nocite{DK15c}
+\nocite{DK15b}
+\nocite{RWJ*15}
+\nocite{DK15a}
+\nocite{DK14}
+\nocite{KD13}
+\nocite{DBZ12}
+\nocite{DWK12}
+\nocite{MKD*11}
+\nocite{MDG*11}
+\nocite{DBZ09}
+\nocite{D09}
+
+\bibliographystyle{unsrt_custom}
+\bibliography{deblasio_pub}
+
+\end{document}

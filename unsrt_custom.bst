@@ -709,6 +709,19 @@ FUNCTION {inproceedings}
   fin.entry
 }
 
+FUNCTION {poster}
+{ output.bibitem
+  format.title "title" output.check
+  new.block
+  format.authors "author" output.check
+  new.block
+  conf output
+  new.block
+  note output
+  add.period$
+  fin.entry
+}
+
 FUNCTION {conference} { inproceedings }
 
 FUNCTION {manual}

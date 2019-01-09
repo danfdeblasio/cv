@@ -8,3 +8,8 @@ bibtex s.aux
 bibtex p.aux
 pdflatex cv.tex
 pdflatex cv.tex
+
+
+pdflatex publications
+bibtex publications
+pdflatex publications

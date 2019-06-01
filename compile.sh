@@ -13,3 +13,4 @@ pdflatex cv.tex
 pdflatex publications
 bibtex publications
 pdflatex publications
+pdflatex publications

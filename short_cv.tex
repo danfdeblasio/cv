@@ -1,0 +1,474 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{graphicx}
+\usepackage[colorlinks,urlcolor=blue]{hyperref}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage[resetlabels]{multibib}
+\usepackage{tabularx, multirow}
+\usepackage{titlesec}
+\usepackage{datetime}
+\usepackage{xstring}
+\usepackage{xspace}
+\usepackage{scrextend}
+\usepackage{amsmath}
+
+\usepackage{enumitem}
+\setitemize{itemsep=0pt}
+\setlist[itemize]{noitemsep, topsep=0pt,partopsep=0pt,parsep=0pt}
+
+\hyphenation{StringBio}
+
+
+\newenvironment{hangingpar}[1]
+  {\begin{list}
+          {}
+          {\setlength{\itemindent}{-#1}%%'
+           \setlength{\leftmargin}{#1}%%'
+           \setlength{\itemsep}{0pt}%%'
+           \setlength{\parsep}{\parskip}%%'
+           \setlength{\topsep}{\parskip}%%'
+           }
+    \setlength{\parindent}{-#1}%%
+    \item[]
+  }
+  {\end{list}}
+  
+  
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\newcommand{\bigdot}{$\cdot$\xspace}
+
+% Set margins.
+\oddsidemargin=0.0in
+\evensidemargin=0.0in
+\textwidth=6.5in
+\voffset=-0.125in
+\headheight=0.0in
+\topmargin=0.0in
+\textheight=9.0in
+
+% Define colors.
+\definecolor{addresscolor}{rgb}{0.2,0.2,0.2}
+\definecolor{datecolor}{rgb}{0.5,0.5,0.5}
+
+\newdateformat{monthyeardate}{%
+  \monthname[\THEMONTH] \THEYEAR}
+  
+
+% Turn off page numbering.
+\pagestyle{fancy}
+\fancyhf{}
+\lfoot{\datestyle Dan F.DeBlasio}
+\cfoot{\datestyle \thepage}
+\rfoot{\datestyle \monthyeardate\today}
+\renewcommand{\headrulewidth}{0.0pt}
+
+% Set parameters and content.
+\newcommand{\namestyle}{\Huge \scshape}
+\newcommand{\deptstyle}{\footnotesize \rmfamily \scshape}
+\newcommand{\addressstyle}{\color{addresscolor} \footnotesize \rmfamily \upshape}
+\newcommand{\datestyle}{\color{datecolor} \footnotesize \rmfamily \upshape}
+
+% Remove list labels.
+\renewcommand{\labelitemi}{}
+\renewcommand{\labelitemii}{}
+
+\titleformat*{\section}{\LARGE\itshape\titlerule\bfseries}
+\titleformat*{\subparagraph}{\itshape\bfseries}
+
+%format my name in the bibliographies
+\def\FormatName#1{%
+  \noexpandarg
+  \IfSubStr*{#1}{DeBlasio}{\underline{#1}}{#1}%
+}
+  
+
+% Define bibliographies.
+\newcites{j,c,t,s,b,p}{Publications,Conference Publications, Theses, Service Related Publication, Book, Posters}
+
+
+\begin{document}
+
+% Print title.
+\hspace{-2.5em}
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r}
+\multirow{2}{*}{\namestyle Dan F. DeBlasio, PhD } &  dan@dandeblasio.com\\
+				& http://dandeblasio.com\\
+\end{tabular*}
+
+\small
+
+
+\section*{Education}
+\begin{itemize}[leftmargin=*,labelindent=5pt,itemindent=-15pt]
+\item \textbf{Doctor of Philosophy, Computer Science}
+University of Arizona \bigdot Tucson, AZ \bigdot 2016
+%\begin{itemize}
+%    \item Advisor: John Kececioglu.
+%    \item Dissertation: ``Parameter Advising for Multiple Sequence Alignment''
+%    \item Minor: Ecology and Evolutionary Biology
+%\end{itemize}
+%%
+\item \textbf{Master of Science, Computer Science}
+University of Central Florida \bigdot Orlando, FL \bigdot 2009
+%\begin{itemize}
+%   \item Advisor: Shaojie Zhang
+%    \item Thesis: ``New Computational Approaches to Multiple RNA Alignment and RNA Search''
+%\end{itemize}
+%
+\item \textbf{Bachelor of Science, Computer Science}
+University of Central Florida \bigdot Orlando, FL \bigdot 2007
+\end{itemize}
+
+
+
+
+\section*{Professional Experience}
+
+\begin{itemize}[leftmargin=*,labelindent=5pt,itemindent=-15pt]
+\item \textbf{Assistant Professor}
+University of Texas at El Paso \bigdot El Paso, TX \bigdot 08/2019--present
+\begin{itemize}
+	\item Department of Computer Science, College of Engineering
+\end{itemize}
+
+
+\item \textbf{Lane Fellow}
+Carnegie Mellon University \bigdot Pittsburgh, PA \bigdot 9/2016--08/2019
+\begin{itemize}
+    \item Computational Biology Department, School of Computer Science
+    %\item Advisor: Carl Kingsford
+\end{itemize}
+
+\item \textbf{Graduate Research Assistant}
+University of Arizona \bigdot Tucson, AZ \bigdot 8/2010--6/2016 
+%\begin{itemize}
+%    \item Fellow of the NSF IGERT in Comparative Genomics Grant DGE-0654435 (2010-2013)
+%    \item Funded under NSF Grant IIS-1217886 (2013-2016)
+%\end{itemize}
+
+\item \textbf{Research Associate II}
+Sanford-Burnham Institute for Medical Research \bigdot Orlando, FL \bigdot 5/2010--8/2010 
+%\begin{itemize}
+%    \item Software development and data analysis of RNA-Seq and Chip-Seq experiments related to melanoma classification.
+%\end{itemize}
+
+\item \textbf{Graduate Research Assistant}
+University of Central Florida \bigdot Orlando, FL \bigdot 8/2007--8/2010 
+\begin{itemize}
+    \item Department of Engineering Technology, College of Engineering and Computer Science
+%    \item Project was to interface with local law enforcement to improve communication
+\end{itemize}
+
+\item \textbf{Developer}
+Cloudspace \bigdot Orlando, FL \bigdot 8/2005--8/2007 
+%\begin{itemize}
+%    \item Develop and maintain web-based applications 
+%    \item Worked on both server side and client facing development
+%\end{itemize}
+\end{itemize}
+
+\section*{Mentorship}
+\begin{itemize}[leftmargin=*,labelindent=5pt,itemindent=-15pt]
+\item \textbf{Fiyinfoluwa Gbosibo} May--July 2017 \bigdot iBRIC student at CMU/Pitt
+\item \textbf{Kwanho Kim} September 2017--May 2019 \bigdot MSCB at CMU
+\item \textbf{Md. Easin Hasan} December 2019-- \bigdot MS Bioinformatics, PhD Data Science at UTEP
+\item \textbf{Hector Richart Ruiz} November 2019-- \bigdot BS Computer Science at UTEP
+\end{itemize}
+
+% Publications.
+\bibliographystylej{unsrt_custom}
+\bibliographystylec{unsrt_custom}
+\bibliographystyles{unsrt_custom}
+\bibliographystylet{unsrt_custom}
+\bibliographystyleb{unsrt_custom}
+\bibliographystylep{unsrt_custom}
+
+\nocitej{BDD*21}
+\nocitej{DKK20}
+\nocitej{DGKM19}
+\nocitep{DGKM19p}
+\nocitej{MDPK19}
+\nocites{RSG18}
+\nocites{SCS18}
+\nocites{HND*18}
+\nocitep{GRF*18p}
+\nocitep{DK18p}
+%%\nocitej{DKK19}
+\nocitej{DK18d}
+%%\nocitec{MDK18}
+\nocitej{MDK18}
+%%\nocitej{DK18b}
+\nociteb{DK18a}
+\nocites{AFR*18}
+\nocites{RAM*17}
+\nocitej{DK17b}
+%\nocitec{DK17a}
+\nocitej{OFW*17}
+\nocites{WHF*16}
+%\nocitec{DK16}
+\nocitet{D16}
+\nocitej{DW16}
+\nocitep{DK16p}
+\nocitej{DK15c}
+%%\nocitec{DK15c}
+\nocitej{DK15b}
+\nocitep{DK15p}
+\nocites{RWJ*15}
+\nocites{DK15a}
+%\nocitec{DK14}
+\nocitep{DK14ap}
+\nocitep{DK14bp}
+\nocitej{KD13}
+\nocitep{DK13ap}
+\nocitep{DK13bp}
+\nocitej{DBZ12}
+%\nocitec{DWK12}
+\nocitej{MKD*11}
+\nocitej{MDG*11}
+\nocitep{DWFK11p}
+%\nocitec{DBZ09}
+\nocitet{D09}
+\nocitep{DBBZ09p}
+
+
+\bibliographyb{deblasio}
+\bibliographyt{deblasio}
+%\bibliographyc{deblasio}
+\bibliographyj{deblasio}
+\bibliographys{deblasio}
+%\footnotetext[1]{editorial, not peer reviewed}
+%\bibliographyp{deblasio}
+
+
+
+
+\section*{Invited Talks}
+
+\begin{itemize}[leftmargin=*,labelindent=5pt,itemindent=-15pt]
+  \item \textbf{University of Texas at El Paso Biology Department Seminar \bigdot~El Paso, TX} \bigdot~\textit{October~2019} %\bigdot ``Toward building an automated bioinformatician: more accurate transcript assembly via parameter advising''
+  \item \textbf{Workshop on Automated Algorithm Design at TTI \bigdot~Chicago, IL} \bigdot~\textit{August~2019}% \bigdot~``Toward building an automated bioinformatician: more accurate transcript assembly via parameter advising''
+  \item \textbf{Rutgers University, Camden \bigdot~Camden, NJ} \bigdot~\textit{April~2019} %\bigdot~``Toward building an automated bioinformatician: parameter advising for improved scientific discovery''
+  \item \textbf{University of Texas at El Paso \bigdot~El Paso, TX} \bigdot~\textit{February~2019}%\bigdot~``Toward building an automated bioinformatician: parameter advising for improved scientific discovery''
+  \item \textbf{Biological Data Science \bigdot~Cold Spring Harbor, NY} \bigdot~\textit{November~2018} %\bigdot~``Building an automated bioinformatician---More accurate, large-scale genomic discovery using parameter advising'' 
+   \item \textbf{StringBio~2018 \bigdot Orlando, FL} \bigdot~\textit{October~2018}% \bigdot~``Multiple sequence alignment accuracy estimation and its role in creating an automated bioinformatician'' 
+   \item \textbf{ESCS~2018 \bigdot Athens, Greece} \bigdot~\textit{September~2018} %\bigdot~``Building an automated bioinformatician: More accurate, large-scale genomic discovery using parameter advising''
+    \item \textbf{ISMB~2018 \bigdot Chicago, IL} \bigdot~\textit{July~2018}% \bigdot~``Building an automated bioinformatician: More accurate, large-scale genomic discovery using parameter advising''
+    \item \textbf{ISMB~2016 \bigdot Orlando, FL} \bigdot~\textit{July~2016}% \bigdot~``Adaptive local realignment via parameter advising'' 
+    \item \textbf{Carnegie Mellon University \bigdot Pittsburgh, PA} \bigdot~\textit{May~2016}% \bigdot~``Parameter advising for multiple sequence alignment''
+    \item \textbf{Reed College \bigdot Portland, OR} \bigdot~\textit{March~2016}% \bigdot ``Parameter advising for multiple sequence alignment''
+    \item \textbf{ISCB Student Council Symposium 2014 \bigdot  Boston, MA}% \bigdot~\textit{July~2014} \bigdot~``Advising multiple sequence alignments''
+   
+\end{itemize}
+
+
+\section*{Released Software}
+\begin{itemize}[leftmargin=*,labelindent=5pt,itemindent=-15pt]
+\item \textbf{Scallop Parameter Advising}						github.com/Kingsford-Group/scallopadvising
+\item \textbf{Feature-based Accuracy Estimator (Facet)} 			facet.cs.arizona.edu
+\item \textbf{Opal v3.0}										opal.cs.arizona.edu 
+\item \textbf{Sister Clade Extractor (SiClE)}						eebweb.arizona.edu/sicle/
+\item \textbf{Profile based Multiple Fast RNA alignment (PMFastR)}	genome.ucf.edu/PMFastR 
+\end{itemize}
+
+\section*{Teaching Experience}
+\begin{itemize}[leftmargin=*,labelindent=5pt,itemindent=-15pt]
+\item \textbf{Instructor}  University of Texas at El Paso, El Paso, TX
+\begin{itemize}
+	\item Elementary Data Structures (CS 2401), Spring, Fall 2020.
+	\item Algorithmic Foundations of Computational Biology (CS 4390/5390), Fall 2019.
+	\item Algorithms for Computational Biology (CS 4364/5364), Spring 2021.
+\end{itemize}
+
+\item \textbf{Instructor}  Carnegie Mellon University \bigdot Pittsburgh, PA
+\begin{itemize}
+    \item Advanced Topics in Computational Genomics (02-715), Spring 2018.
+\end{itemize}
+
+\item \textbf{Instructor} University of Arizona \bigdot Tucson, AZ
+\begin{itemize}
+    \item Evolutionary and Functional Genomics Lab (ECOL 553L), Fall 2012.
+\end{itemize}
+
+\item \textbf{Teaching Assistant}
+University of Arizona \bigdot Tucson, AZ
+\begin{itemize}
+    \item Evolutionary and Functional Genomics (ECOL 553), Fall 2012.
+\end{itemize}
+
+\item \textbf{Teaching Assistant}
+University of Central Florida \bigdot Orlando, FL
+\begin{itemize}
+    \item Burnett Honors College Summer Institute (high school programming summer camp), Summer 2008.
+    \item Burnett Honors College Summer Institute (high school programming summer camp), Summer 2007.
+    \item Introduction to C Programming, Fall 2006
+\end{itemize}
+\end{itemize}
+\section*{Honors and Awards}
+
+\begin{itemize}
+    \item Best Student Paper Award, ACM-BCB 2019 (to advisee Fiyin Gbosibo)
+    \item Outstanding Poster Presentation, ISMB 2018 (presenting author for the EIC poster)
+    \item Lane Fellowship, CMU CBD, 2016-2019
+    \item UA Department Fellowship, 2013,2014,2015
+    \item UA Department Service award, 2013
+    \item UA Department Scholarship award, 2016
+    \item NSF IGERT Fellow, 2010-2013
+    \item NSF REU in Computer Vision, 2006
+%    \item Travel Fellowships
+%    \begin{itemize}
+%    	\item \{Event\} --- \{Location\} --- \{Funding Agency\}
+%    	\item ECCB 2018 --- Athens, Greece --- ISCB Student Council
+%    	\item ISMB 2018 --- Chicago, IL --- ISCB
+%	\item ISMB/ECCB 2017 --- Prague, Czech Republic --- ISCB Student Council 
+%	\item ISMB 2016 --- Orlando, FL --- ISCB Student Council
+%	\item ISMB/ECCB 2015 --- Dublin, Ireland --- ISCB Student Council
+%	\item ACM-BCB 2014 --- Newport Beach, CA --- NSF
+%	\item ISMB 2014 --- Boston, MA --- ISCB Student Council 
+%	\item ISMB/ECCB 2013 --- Berlin, Germany --- NSF
+%	\item RECOMB 2012 --- Barcelona, Spain --- UA GPSC
+%	\item RECOMB 2012 --- Barcelona, Spain --- NSF
+%	\item ISMB/ECCB 2011 --- Vienna, Austria --- UA GPSC
+%	\item WABI 2009 --- Philadelphia, PA --- UCF Graduate Council 
+%	\item RECOMB 2009 --- Tucson, AZ --- RECOMB
+%	\item RECOMB 2009 --- Tucson, AZ --- UCF Graduate Council
+%    \end{itemize}
+\end{itemize}
+
+\section*{Service and Leadership Activities}
+
+
+\subparagraph{Member} 
+ISCB
+; ACM, ACM SIGBio, ACM SIGAct
+; Upsilon Pi Epsilon
+
+\subparagraph{Committee Member} 
+\begin{itemize}[leftmargin=!,labelindent=5pt,itemindent=-15pt]
+    \item \textbf{Program Committee} : IEEE ICCABS 2017; RECOMB-SEQ 2020, 2021; ISMB(/ECCB) 2020, 2021
+    \item \textbf{Outreach Coordinator} : ACM-BCB 2020
+    \item \textbf{Organizing Committee} : Workshop on the Future of Algorithms in Biology (FAB) 2018; 
+    ISCB SCS 2014, 2015, 2017;  
+    ISCB SCS\nobreakdash-Africa 2017; 
+    ISCB SCS-Latin America 2018;  
+    \item \textbf{Student Activities Co-Chair} : ACM-BCB 2016
+    \item \textbf{Publicity Chair} : ACM-BCB 2020
+\end{itemize}
+
+\subparagraph{Reviewer} 
+\begin{itemize}[leftmargin=!,labelindent=5pt,itemindent=-15pt]
+    \item \textbf{Research Grants} : 
+    	NSF BIO Directorate (2019, 2021), 
+    	NSF CISE Directorate (2021), 
+	U.S.-Israel Binational Science Foundation (2021), 
+	Antwerp University Association (2021)
+    \item \textbf{Books} : 
+    	CRC Press
+    \item \textbf{Journals} :
+        Bioinformatics,
+        BMC Bioinformatics, 
+        PLOS One, 
+        PeerJ, 
+        Nucleic Acids Research, 
+        Journal of Health Informatics Research,
+        Current Bioinformatics.
+    \item \textbf{Conferences} :
+        ISCB SCS (2014-19), % 7 
+        ISCB SCS-LA (2014), % 8
+        ISCB ESCS (2016), % 6?
+	RECOMB (2017-20), % 1 & 1 & 1
+	WABI (2017), % 1
+	ISMB/ECCB (2017,19,21), %1 & 1
+    	IEEE ICCABS (2017), % 3
+	ISMB (2018,20), %5
+	ACM-BCB (2018-21), %1 
+	Grace Hopper (2019), %15 posters
+	ESA (2019). % 2 papers
+     \item \textbf{Competitions} : 
+     	ISMB Posters (2017-18),
+	RECOMB Posters (2019), 
+     	ISCB Wikipedia Competition (2017-20)
+%     \item \textbf{Other} :
+%         ISCB SCS Travel Grants (2016-18), 
+%         UA GPSC Travel Grants (various 2011-2014)
+\end{itemize}
+
+\subparagraph{Board of Directors}
+International Society for Computational Biology  \bigdot 2017--2019
+%\begin{itemize}
+%    \item Student Council representative 
+%    \item advocate for students needs within the society
+%    \item help make decisions on the societal operations
+%\end{itemize}
+
+\subparagraph{Executive Team}
+International Society for Computational Biology Student Council \bigdot 2017--2019
+%\begin{itemize} 
+%    \item oversee and advise on committee actions and conference planning 
+%    \item help make decisions on the council operations
+%\end{itemize}
+
+%\subparagraph{Web Committee Co-chair}
+%International Society for Computational Biology Student Council  \bigdot 2012-2017
+%\begin{itemize}
+%    \item managed a group of student volunteers to maintain the ISCB-SC website
+%    \item oversaw the development and maintenance of the conference submission system
+%\end{itemize}
+%
+%\subparagraph{AGCCS Computer Science Representative}
+%University of Arizona \bigdot 7/2012--5/2013
+%\begin{itemize}
+%    \item Associate Graduate Council for the College of Science at the University of Arizona
+%    \item advocate for students in the Computer Science department in affairs to the deans and college administration
+%\end{itemize}
+%
+%\subparagraph{Chair, Graduate Student Council}
+%University of Arizona \bigdot 7/2011--5/2012
+%\begin{itemize}
+%    \item organized events for graduate students and prospective students in the Computer Science Department
+%    \item coordinate discussions with the department administration
+%\end{itemize}
+%
+%\subparagraph{Volunteer Coordinator, Graduate Student Council}
+%University of Arizona \bigdot 7/2010--5/2011
+%\begin{itemize}
+%    \item find volunteers to organize department seminar setup and tear down
+%    \item coordinate responsibilities for department events planned by the council
+%\end{itemize}
+%
+%\subparagraph{Co-chair, Science Salon}
+%University of Arizona \bigdot 7/2011--5/2013
+%\begin{itemize}
+%    \item organized discussions about interdisciplinary science
+%    \item vetted topic ideas and assisted in their presentation
+%    \item guided discussion at events
+%\end{itemize}
+%
+%\subparagraph{Conference Volunteer}
+%\begin{itemize}
+%	\item ISMB 2012, RECOMB Satellites 2019
+%\end{itemize}
+%
+%\subparagraph{Conference Attendance}
+%\begin{itemize}
+%	\item ACM-BCB 2014, 15, 16, 19, 20
+%	\item Cold Spring Harbor Laboratory: Biological Data Sciences 2018
+%	\item ECCB 2018
+%	\item ESCS 2018
+%	\item FoCS 2009
+%	\item ICML 2019
+%	\item IGERT Symposium on Deep Genomics 2013
+%	\item International Workshop on String Algorithms in Bioinformatics (StringBio) 2018
+%	\item ISMB/ECCB 2011,13, 15, 17, 19
+%	\item ISMB 2012, 14, 16, 18, 20
+%	\item MAGE 2013
+%	\item RECOMB 2009, 12, 17, 19, 20
+%	\item ISCB-SCS 2012, 13, 14, 15, 16
+%	\item WABI 2009, 15, 16, 20
+%	\item Workshop on Automated Algorithm Design at the Toyota Technical Institute 2019
+%	\item Workshop on Learning-Based Algorithms at the Toyota Technical Institute 2019
+%	\item Workshop on Emerging Technologies for Sequence Analysis 2018
+%	\item Workshop on the Future of Algorithms in Biology 2018
+%\end{itemize}
+\end{document}

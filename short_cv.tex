@@ -4,7 +4,7 @@
 \usepackage{color}
 \usepackage{enumerate}
 \usepackage{fancyhdr}
-\usepackage[resetlabels]{multibib}
+\usepackage[labeled]{multibib}
 \usepackage{tabularx, multirow}
 \usepackage{titlesec}
 \usepackage{datetime}
@@ -50,7 +50,7 @@
 
 % Define colors.
 \definecolor{addresscolor}{rgb}{0.2,0.2,0.2}
-\definecolor{datecolor}{rgb}{0.5,0.5,0.5}
+\definecolor{datecolor}{rgb}{0,0,0}
 
 \newdateformat{monthyeardate}{%
   \monthname[\THEMONTH] \THEYEAR}
@@ -59,13 +59,13 @@
 % Turn off page numbering.
 \pagestyle{fancy}
 \fancyhf{}
-\lfoot{\datestyle Dan F.DeBlasio}
+%\lfoot{\datestyle Dan F.DeBlasio}
 \cfoot{\datestyle \thepage}
-\rfoot{\datestyle \monthyeardate\today}
+%\rfoot{\datestyle \monthyeardate\today}
 \renewcommand{\headrulewidth}{0.0pt}
 
 % Set parameters and content.
-\newcommand{\namestyle}{\Huge \scshape}
+\newcommand{\namestyle}{\LARGE \scshape}
 \newcommand{\deptstyle}{\footnotesize \rmfamily \scshape}
 \newcommand{\addressstyle}{\color{addresscolor} \footnotesize \rmfamily \upshape}
 \newcommand{\datestyle}{\color{datecolor} \footnotesize \rmfamily \upshape}
@@ -74,9 +74,10 @@
 \renewcommand{\labelitemi}{}
 \renewcommand{\labelitemii}{}
 
-\titleformat*{\section}{\LARGE\itshape\titlerule\bfseries}
+\titleformat*{\section}{\itshape\bfseries}
+\titlespacing*{\section}{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
 \titleformat*{\subparagraph}{\itshape\bfseries}
-
+\titlespacing{\subparagraph}{1.5em}{5pt plus 4pt minus 2pt}{0pt plus 0pt minus 0pt}
 %format my name in the bibliographies
 \def\FormatName#1{%
   \noexpandarg
@@ -85,16 +86,15 @@
   
 
 % Define bibliographies.
-\newcites{j,c,t,s,b,p}{Publications,Conference Publications, Theses, Service Related Publication, Book, Posters}
-
+\newcites{C,t,B}{Selected Publications, Theses, Book}
 
 \begin{document}
-
+ \setcounter{page}{4} 
 % Print title.
 \hspace{-2.5em}
 \begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r}
-\multirow{2}{*}{\namestyle Dan F. DeBlasio, PhD } &  dan@dandeblasio.com\\
-				& http://dandeblasio.com\\
+\multirow{2}{*}{\namestyle Dan F. DeBlasio, PhD } &  dfdeblasio@utep.edu\\
+				& http://deblasiolab.org\\
 \end{tabular*}
 
 \small
@@ -103,18 +103,20 @@
 \section*{Education}
 \begin{itemize}[leftmargin=*,labelindent=5pt,itemindent=-15pt]
 \item \textbf{Doctor of Philosophy, Computer Science}
-University of Arizona \bigdot Tucson, AZ \bigdot 2016
+University of Arizona \bigdot Tucson, AZ \bigdot 2016\\
 %\begin{itemize}
 %    \item Advisor: John Kececioglu.
-%    \item Dissertation: ``Parameter Advising for Multiple Sequence Alignment''
+%    \item 
+Dissertation: ``Parameter Advising for Multiple Sequence Alignment''
 %    \item Minor: Ecology and Evolutionary Biology
 %\end{itemize}
 %%
 \item \textbf{Master of Science, Computer Science}
-University of Central Florida \bigdot Orlando, FL \bigdot 2009
+University of Central Florida \bigdot Orlando, FL \bigdot 2009\\
 %\begin{itemize}
 %   \item Advisor: Shaojie Zhang
-%    \item Thesis: ``New Computational Approaches to Multiple RNA Alignment and RNA Search''
+%    \item 
+Thesis: ``New Computational Approaches to Multiple RNA Alignment and RNA Search''
 %\end{itemize}
 %
 \item \textbf{Bachelor of Science, Computer Science}
@@ -125,7 +127,6 @@ University of Central Florida \bigdot Orlando, FL \bigdot 2007
 
 
 \section*{Professional Experience}
-
 \begin{itemize}[leftmargin=*,labelindent=5pt,itemindent=-15pt]
 \item \textbf{Assistant Professor}
 University of Texas at El Paso \bigdot El Paso, TX \bigdot 08/2019--present
@@ -173,71 +174,75 @@ Cloudspace \bigdot Orlando, FL \bigdot 8/2005--8/2007
 \begin{itemize}[leftmargin=*,labelindent=5pt,itemindent=-15pt]
 \item \textbf{Fiyinfoluwa Gbosibo} May--July 2017 \bigdot iBRIC student at CMU/Pitt
 \item \textbf{Kwanho Kim} September 2017--May 2019 \bigdot MSCB at CMU
-\item \textbf{Md. Easin Hasan} December 2019-- \bigdot MS Bioinformatics, PhD Data Science at UTEP
+\item \textbf{Md. Easin Hasan} December 2019--November 2021\bigdot MS Bioinformatics at UTEP
 \item \textbf{Hector Richart Ruiz} November 2019-- \bigdot BS Computer Science at UTEP
+\item \textbf{Fabian Cano} May 2021-- \bigdot BS Computer Science at UTEP
+\item \textbf{Demetrius Hernandez} September 2021-- \bigdot BS Computer Science at UTEP
+\item \textbf{Luis Castillo} November 2021-- \bigdot BS Computer Science at UTEP
+\item \textbf{Marissa Stephens} August 2021--December 2021 \bigdot Googler in Residence at UTEP
 \end{itemize}
 
 % Publications.
-\bibliographystylej{unsrt_custom}
-\bibliographystylec{unsrt_custom}
-\bibliographystyles{unsrt_custom}
-\bibliographystylet{unsrt_custom}
-\bibliographystyleb{unsrt_custom}
-\bibliographystylep{unsrt_custom}
+\bibliographystyleC{unsrt_custom_small}
+%\bibliographystylec{unsrt_custom_small}
+%\bibliographystyles{unsrt_custom_small}
+%\bibliographystylet{unsrt_custom_small}
+\bibliographystyleB{unsrt_custom_small}
+%\bibliographystylep{unsrt_custom_small}
 
-\nocitej{BDD*21}
-\nocitej{DKK20}
-\nocitej{DGKM19}
-\nocitep{DGKM19p}
-\nocitej{MDPK19}
-\nocites{RSG18}
-\nocites{SCS18}
-\nocites{HND*18}
-\nocitep{GRF*18p}
-\nocitep{DK18p}
-%%\nocitej{DKK19}
-\nocitej{DK18d}
+\nociteC{BDD*21}
+\nociteC{DKK20} %%
+\nociteC{DGKM19}
+%\nociteC{DGKM19p}
+\nociteC{MDPK19}
+%\nocites{RSG18}
+%\nocites{SCS18}
+%\nocites{HND*18}
+%\nociteC{GRF*18p}
+%\nociteC{DK18p}
+%%\nociteC{DKK19}
+%\nociteC{DK18d}
 %%\nocitec{MDK18}
-\nocitej{MDK18}
-%%\nocitej{DK18b}
-\nociteb{DK18a}
-\nocites{AFR*18}
-\nocites{RAM*17}
-\nocitej{DK17b}
+\nociteC{MDK18}
+%%\nociteC{DK18b}
+\nociteB{DK18a} %%
+%\nocites{AFR*18}
+%\nocites{RAM*17}
+\nociteC{DK17b} %%
 %\nocitec{DK17a}
-\nocitej{OFW*17}
-\nocites{WHF*16}
+%\nociteC{OFW*17}
+%\nocites{WHF*16}
 %\nocitec{DK16}
 \nocitet{D16}
-\nocitej{DW16}
-\nocitep{DK16p}
-\nocitej{DK15c}
+\nociteC{DW16}
+%\nociteC{DK16p}
+%\nociteC{DK15c}
 %%\nocitec{DK15c}
-\nocitej{DK15b}
-\nocitep{DK15p}
-\nocites{RWJ*15}
-\nocites{DK15a}
+\nociteC{DK15b}
+%\nociteC{DK15p}
+%\nocites{RWJ*15}
+%\nocites{DK15a}
 %\nocitec{DK14}
-\nocitep{DK14ap}
-\nocitep{DK14bp}
-\nocitej{KD13}
-\nocitep{DK13ap}
-\nocitep{DK13bp}
-\nocitej{DBZ12}
+%\nociteC{DK14ap}
+%\nociteC{DK14bp}
+\nociteC{KD13}
+%\nociteC{DK13ap}
+%\nociteC{DK13bp}
+\nociteC{DBZ12}
 %\nocitec{DWK12}
-\nocitej{MKD*11}
-\nocitej{MDG*11}
-\nocitep{DWFK11p}
+%\nociteC{MKD*11}
+%\nociteC{MDG*11}
+%\nociteC{DWFK11p}
 %\nocitec{DBZ09}
 \nocitet{D09}
-\nocitep{DBBZ09p}
+%\nociteC{DBBZ09p}
 
 
-\bibliographyb{deblasio}
+\bibliographyB{deblasio}
 \bibliographyt{deblasio}
 %\bibliographyc{deblasio}
-\bibliographyj{deblasio}
-\bibliographys{deblasio}
+\bibliographyC{deblasio}
+%\bibliographys{deblasio}
 %\footnotetext[1]{editorial, not peer reviewed}
 %\bibliographyp{deblasio}
 
@@ -245,7 +250,6 @@ Cloudspace \bigdot Orlando, FL \bigdot 8/2005--8/2007
 
 
 \section*{Invited Talks}
-
 \begin{itemize}[leftmargin=*,labelindent=5pt,itemindent=-15pt]
   \item \textbf{University of Texas at El Paso Biology Department Seminar \bigdot~El Paso, TX} \bigdot~\textit{October~2019} %\bigdot ``Toward building an automated bioinformatician: more accurate transcript assembly via parameter advising''
   \item \textbf{Workshop on Automated Algorithm Design at TTI \bigdot~Chicago, IL} \bigdot~\textit{August~2019}% \bigdot~``Toward building an automated bioinformatician: more accurate transcript assembly via parameter advising''
@@ -258,7 +262,7 @@ Cloudspace \bigdot Orlando, FL \bigdot 8/2005--8/2007
     \item \textbf{ISMB~2016 \bigdot Orlando, FL} \bigdot~\textit{July~2016}% \bigdot~``Adaptive local realignment via parameter advising'' 
     \item \textbf{Carnegie Mellon University \bigdot Pittsburgh, PA} \bigdot~\textit{May~2016}% \bigdot~``Parameter advising for multiple sequence alignment''
     \item \textbf{Reed College \bigdot Portland, OR} \bigdot~\textit{March~2016}% \bigdot ``Parameter advising for multiple sequence alignment''
-    \item \textbf{ISCB Student Council Symposium 2014 \bigdot  Boston, MA}% \bigdot~\textit{July~2014} \bigdot~``Advising multiple sequence alignments''
+    \item \textbf{ISCB Student Council Symposium 2014 \bigdot  Boston, MA} \bigdot~\textit{July~2014} %\bigdot~``Advising multiple sequence alignments''
    
 \end{itemize}
 
@@ -276,7 +280,7 @@ Cloudspace \bigdot Orlando, FL \bigdot 8/2005--8/2007
 \begin{itemize}[leftmargin=*,labelindent=5pt,itemindent=-15pt]
 \item \textbf{Instructor}  University of Texas at El Paso, El Paso, TX
 \begin{itemize}
-	\item Elementary Data Structures (CS 2401), Spring, Fall 2020.
+	\item Elementary Data Structures (CS 2401), Spring, Fall 2020, Fall 2021 (with Googler in Residence F21).
 	\item Algorithmic Foundations of Computational Biology (CS 4390/5390), Fall 2019.
 	\item Algorithms for Computational Biology (CS 4364/5364), Spring 2021.
 \end{itemize}
@@ -291,22 +295,21 @@ Cloudspace \bigdot Orlando, FL \bigdot 8/2005--8/2007
     \item Evolutionary and Functional Genomics Lab (ECOL 553L), Fall 2012.
 \end{itemize}
 
-\item \textbf{Teaching Assistant}
-University of Arizona \bigdot Tucson, AZ
-\begin{itemize}
-    \item Evolutionary and Functional Genomics (ECOL 553), Fall 2012.
-\end{itemize}
-
-\item \textbf{Teaching Assistant}
-University of Central Florida \bigdot Orlando, FL
-\begin{itemize}
-    \item Burnett Honors College Summer Institute (high school programming summer camp), Summer 2008.
-    \item Burnett Honors College Summer Institute (high school programming summer camp), Summer 2007.
-    \item Introduction to C Programming, Fall 2006
-\end{itemize}
+%\item \textbf{Teaching Assistant}
+%University of Arizona \bigdot Tucson, AZ
+%\begin{itemize}
+%    \item Evolutionary and Functional Genomics (ECOL 553), Fall 2012.
+%\end{itemize}
+%
+%\item \textbf{Teaching Assistant}
+%University of Central Florida \bigdot Orlando, FL
+%\begin{itemize}
+%    \item Burnett Honors College Summer Institute (high school programming summer camp), Summer 2008.
+%    \item Burnett Honors College Summer Institute (high school programming summer camp), Summer 2007.
+%    \item Introduction to C Programming, Fall 2006
+%\end{itemize}
 \end{itemize}
 \section*{Honors and Awards}
-
 \begin{itemize}
     \item Best Student Paper Award, ACM-BCB 2019 (to advisee Fiyin Gbosibo)
     \item Outstanding Poster Presentation, ISMB 2018 (presenting author for the EIC poster)
@@ -336,10 +339,8 @@ University of Central Florida \bigdot Orlando, FL
 %    \end{itemize}
 \end{itemize}
 
-\section*{Service and Leadership Activities}
-
-
-\subparagraph{Member} 
+\section*{Selected Service and Leadership Activities}
+\subparagraph{Member} \hspace{1em}
 ISCB
 ; ACM, ACM SIGBio, ACM SIGAct
 ; Upsilon Pi Epsilon
@@ -349,11 +350,11 @@ ISCB
     \item \textbf{Program Committee} : IEEE ICCABS 2017; RECOMB-SEQ 2020, 2021; ISMB(/ECCB) 2020, 2021
     \item \textbf{Outreach Coordinator} : ACM-BCB 2020
     \item \textbf{Organizing Committee} : Workshop on the Future of Algorithms in Biology (FAB) 2018; 
-    ISCB SCS 2014, 2015, 2017;  
-    ISCB SCS\nobreakdash-Africa 2017; 
-    ISCB SCS-Latin America 2018;  
-    \item \textbf{Student Activities Co-Chair} : ACM-BCB 2016
-    \item \textbf{Publicity Chair} : ACM-BCB 2020
+%    ISCB SCS 2014, 2015, 2017;  
+%    ISCB SCS\nobreakdash-Africa 2017; 
+%    ISCB SCS-Latin America 2018;  
+%    \item \textbf{Student Activities Co-Chair} : ACM-BCB 2016
+%    \item \textbf{Publicity Chair} : ACM-BCB 2020
 \end{itemize}
 
 \subparagraph{Reviewer} 
@@ -373,37 +374,37 @@ ISCB
         Nucleic Acids Research, 
         Journal of Health Informatics Research,
         Current Bioinformatics.
-    \item \textbf{Conferences} :
-        ISCB SCS (2014-19), % 7 
-        ISCB SCS-LA (2014), % 8
-        ISCB ESCS (2016), % 6?
-	RECOMB (2017-20), % 1 & 1 & 1
-	WABI (2017), % 1
-	ISMB/ECCB (2017,19,21), %1 & 1
-    	IEEE ICCABS (2017), % 3
-	ISMB (2018,20), %5
-	ACM-BCB (2018-21), %1 
-	Grace Hopper (2019), %15 posters
-	ESA (2019). % 2 papers
-     \item \textbf{Competitions} : 
-     	ISMB Posters (2017-18),
-	RECOMB Posters (2019), 
-     	ISCB Wikipedia Competition (2017-20)
+%    \item \textbf{Conferences} :
+%        ISCB SCS (2014-19), % 7 
+%        ISCB SCS-LA (2014), % 8
+%        ISCB ESCS (2016), % 6?
+%	RECOMB (2017-20), % 1 & 1 & 1
+%	WABI (2017), % 1
+%	ISMB/ECCB (2017,19,21), %1 & 1
+%    	IEEE ICCABS (2017), % 3
+%	ISMB (2018,20), %5
+%	ACM-BCB (2018-21), %1 
+%	Grace Hopper (2019), %15 posters
+%	ESA (2019). % 2 papers
+%     \item \textbf{Competitions} : 
+%     	ISMB Posters (2017-18),
+%	RECOMB Posters (2019), 
+%     	ISCB Wikipedia Competition (2017-20)
 %     \item \textbf{Other} :
 %         ISCB SCS Travel Grants (2016-18), 
 %         UA GPSC Travel Grants (various 2011-2014)
 \end{itemize}
 
-\subparagraph{Board of Directors}
-International Society for Computational Biology  \bigdot 2017--2019
+\subparagraph{Board of Directors \& Student Council Exec. Team}\hspace{1em}
+Intl. Society for Computational Biology  \bigdot 2017--2019
 %\begin{itemize}
 %    \item Student Council representative 
 %    \item advocate for students needs within the society
 %    \item help make decisions on the societal operations
 %\end{itemize}
-
-\subparagraph{Executive Team}
-International Society for Computational Biology Student Council \bigdot 2017--2019
+%
+%\subparagraph{Executive Team}\hspace{1em}
+%International Society for Computational Biology Student Council \bigdot 2017--2019
 %\begin{itemize} 
 %    \item oversee and advise on committee actions and conference planning 
 %    \item help make decisions on the council operations

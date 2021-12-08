@@ -4,7 +4,7 @@
 \usepackage{color}
 \usepackage{enumerate}
 \usepackage{fancyhdr}
-\usepackage[labeled,resetlabels]{multibib}
+\usepackage[]{multibib}
 \usepackage{tabularx, multirow}
 \usepackage{titlesec}
 \usepackage{datetime}
@@ -60,7 +60,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 %\lfoot{\datestyle Dan F.DeBlasio}
-\cfoot{\datestyle \thepage}
+\cfoot{\datestyle}% \thepage}
 %\rfoot{\datestyle \monthyeardate\today}
 \renewcommand{\headrulewidth}{0.0pt}
 
@@ -89,7 +89,7 @@
 \newcites{C,t,B}{Selected Publications, Theses, Book}
 
 \begin{document}
- \setcounter{page}{4} 
+% \setcounter{page}{4} 
 % Print title.
 \hspace{-2.5em}
 \begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r}

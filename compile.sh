@@ -2,6 +2,7 @@
 
 pdflatex cv.tex
 bibtex j.aux
+bibtex c.aux
 bibtex b.aux
 bibtex t.aux
 bibtex s.aux

@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pdflatex cv.tex
+bibtex m.aux
 bibtex j.aux
 bibtex c.aux
 bibtex b.aux

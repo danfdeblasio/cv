@@ -1,0 +1,202 @@
+\documentclass[11pt]{article}
+
+\usepackage{graphicx}
+\usepackage[colorlinks,urlcolor=blue]{hyperref}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage[resetlabels]{multibib}
+\usepackage{tabularx, multirow}
+\usepackage{titlesec}
+\usepackage{datetime}
+\usepackage{xstring}
+\usepackage{xspace}
+\usepackage{scrextend}
+\usepackage[T1]{fontenc}
+\usepackage{newpxtext}
+
+\usepackage{enumitem}
+\setitemize{itemsep=0pt}
+\setlist[itemize]{noitemsep, topsep=0pt}
+
+\hyphenation{StringBio}
+
+
+\newenvironment{hangingpar}[1]
+  {\begin{list}
+          {}
+          {\setlength{\itemindent}{-#1}%%'
+           \setlength{\leftmargin}{#1}%%'
+           \setlength{\itemsep}{0pt}%%'
+           \setlength{\parsep}{\parskip}%%'
+           \setlength{\topsep}{\parskip}%%'
+           }
+    \setlength{\parindent}{-#1}%%
+    \item[]
+  }
+  {\end{list}}
+  
+  
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\newcommand{\bigdot}{$\cdot$\xspace}
+
+% Set margins.
+\oddsidemargin=0.0in
+\evensidemargin=0.0in
+\textwidth=6.5in
+\voffset=-0.125in
+\headheight=0.0in
+\topmargin=0.0in
+\textheight=9.0in
+
+% Define colors.
+\definecolor{addresscolor}{rgb}{0.2,0.2,0.2}
+\definecolor{datecolor}{rgb}{0.5,0.5,0.5}
+
+\newdateformat{monthyeardate}{%
+  \monthname[\THEMONTH] \THEYEAR}
+  
+
+% Turn off page numbering.
+\pagestyle{fancy}
+\fancyhf{}
+%\lfoot{\datestyle Dan F.DeBlasio}
+%\cfoot{\datestyle \thepage}
+%\rfoot{\datestyle \monthyeardate\today}
+\renewcommand{\headrulewidth}{0.0pt}
+
+% Set parameters and content.
+\newcommand{\namestyle}{\Huge \scshape}
+\newcommand{\deptstyle}{\footnotesize \rmfamily \scshape}
+\newcommand{\addressstyle}{\color{addresscolor} \footnotesize \rmfamily \upshape}
+\newcommand{\datestyle}{\color{datecolor} \footnotesize \rmfamily \upshape}
+
+% Remove list labels.
+\renewcommand{\labelitemi}{}
+\renewcommand{\labelitemii}{}
+
+\titleformat{\section}{\scshape\bfseries\Large}{}{0em}{}
+
+%format my name in the bibliographies
+\def\FormatName#1{%
+  \noexpandarg
+  \IfSubStr*{#1}{DeBlasio}{\underline{#1}}{#1}%
+}
+  
+\newcites{b,ch,j,ja,js,c,u,t,o,p,s,v}{
+Books,
+Chapters in Books,
+Refereed Journal Papers - Published,
+Refereed Journal Papers - Accepted,
+Refereed Journal Papers - Submitted,
+Refereed Conference/Workshop Papers,
+Unrefereed Conference/Workshop Papers,
+Technical Reports,
+Other Publications,
+Patents and Invention Disclosures,
+Software Artifacts,
+Video Productions}
+\pagenumbering{gobble}
+\begin{document}
+\begin{center}
+\scshape\bfseries\Large Publications
+\end{center}
+
+% Publications.
+\bibliographystyleb{unsrt_custom}
+\bibliographystylech{unsrt_custom}
+\bibliographystylej{unsrt_custom}
+\bibliographystyleja{unsrt_custom}
+\bibliographystylejs{unsrt_custom}
+\bibliographystylec{unsrt_custom}
+\bibliographystyleu{unsrt_custom}
+\bibliographystylet{unsrt_custom}
+\bibliographystyleo{unsrt_custom}
+\bibliographystylep{unsrt_custom}
+\bibliographystyles{unsrt_custom}
+\bibliographystylev{unsrt_custom}
+
+\nocitec{CVD25}
+\nocitej{BDD*24}
+\nocitej{BDNC*24}
+\nocitej{WIKI24}
+\nocitec{CAVD24}
+\nocitec{VNP*23}
+\nocitej{MDK23}
+\nocitec{NVED23}
+\nocitet{CRD22}
+\nocitej{DKK20}
+\nocitec{DGKM19}
+%\nocitep{DGKM19p}
+\nocitej{MDPK19}%%%%%3
+\nociteo{RSG18}
+\nociteo{SCS18}
+\nocitej{HND*18}
+%\nocitep{GRF*18p}
+%\nocitep{DK18p}
+%\nocitej{DKK19}
+\nocitej{DK18d}
+%%\nocitec{MDK18}
+\nocitej{MDK18}
+%%\nocitej{DK18b}
+%\nocitem{DK18a}%%%%%%%5
+\nociteb{DK18a}%%%%%%%5
+\nocitej{AFR*18}
+\nociteo{RAM*17}
+\nocitej{DK17b}
+%\nocitec{DK17a}
+\nocitej{OFW*17}
+\nociteo{WHF*16}
+%\nocitec{DK16}
+\nocitet{D16}
+\nocitej{DW16}
+%\nocitep{DK16p}
+\nocitec{DK15c}
+%%\nocitec{DK15c}
+\nocitej{DK15b}
+%\nocitep{DK15p}
+\nociteo{RWJ*15}
+\nociteo{DK15a}
+%\nocitec{DK14}
+%\nocitep{DK14ap}
+%\nocitep{DK14bp}
+%\nocitem{KD13}%%%%%%%4
+\nocitej{KD13}%%%%%%%4
+%\nocitep{DK13ap}
+%\nocitep{DK13bp}
+\nocitej{DBZ12}
+%\nocitec{DWK12}
+%\nocitem{MKD*11}%%%%%%2
+\nocitej{MKD*11}%%%%%%2
+%\nocitem{MDG*11}%%%%%1
+\nocitej{MDG*11}%%%%%1
+%\nocitep{DWFK11p}
+%\nocitec{DBZ09}
+\nocitet{D09}
+%\nocitep{DBBZ09p}
+
+\nocites{ScallopPA}
+\nocites{Opal3}
+\nocites{SicleSW}
+\nocites{FacetSW}
+\nocites{PMFASTRSW}
+
+\nocitev{CS2Vid}
+
+\bibliographyb{deblasio}
+\bibliographych{deblasio}
+\bibliographyj{deblasio}
+\bibliographyja{deblasio}
+\bibliographyjs{deblasio}
+\bibliographyc{deblasio}
+\bibliographyu{deblasio}
+\bibliographyt{deblasio}
+\bibliographyo{deblasio}
+\bibliographyp{deblasio}
+\bibliographys{deblasio}
+\bibliographyv{deblasio}
+
+
+
+\end{document}

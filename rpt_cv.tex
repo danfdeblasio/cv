@@ -1,0 +1,168 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{graphicx}
+\usepackage[colorlinks,urlcolor=blue]{hyperref}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage[]{multibib}
+\usepackage{tabularx, multirow}
+\usepackage{titlesec}
+\usepackage{datetime}
+\usepackage{xstring}
+\usepackage{xspace}
+\usepackage{scrextend}
+\usepackage{amsmath}
+
+\usepackage{enumitem}
+\setitemize{itemsep=0pt}
+\setlist[itemize]{noitemsep, topsep=0pt,partopsep=0pt,parsep=0pt}
+
+\hyphenation{StringBio}
+
+
+\newenvironment{hangingpar}[1]
+  {\begin{list}
+          {}
+          {\setlength{\itemindent}{-#1}%%'
+           \setlength{\leftmargin}{#1}%%'
+           \setlength{\itemsep}{0pt}%%'
+           \setlength{\parsep}{\parskip}%%'
+           \setlength{\topsep}{\parskip}%%'
+           }
+    \setlength{\parindent}{-#1}%%
+    \item[]
+  }
+  {\end{list}}
+  
+  
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\newcommand{\bigdot}{$\cdot$\xspace}
+
+% Set margins.
+\oddsidemargin=0.0in
+\evensidemargin=0.0in
+\textwidth=6.5in
+\voffset=-0.125in
+\headheight=0.0in
+\topmargin=0.0in
+\textheight=9.0in
+
+% Define colors.
+\definecolor{addresscolor}{rgb}{0.2,0.2,0.2}
+\definecolor{datecolor}{rgb}{0,0,0}
+
+\newdateformat{monthyeardate}{%
+  \monthname[\THEMONTH] \THEYEAR}
+  
+
+% Turn off page numbering.
+\pagestyle{fancy}
+\fancyhf{}
+%\lfoot{\datestyle Dan F.DeBlasio}
+\cfoot{\datestyle}% \thepage}
+%\rfoot{\datestyle \monthyeardate\today}
+\renewcommand{\headrulewidth}{0.0pt}
+
+% Set parameters and content.
+\newcommand{\namestyle}{\LARGE \scshape}
+\newcommand{\deptstyle}{\footnotesize \rmfamily \scshape}
+\newcommand{\addressstyle}{\color{addresscolor} \footnotesize \rmfamily \upshape}
+\newcommand{\datestyle}{\color{datecolor} \footnotesize \rmfamily \upshape}
+
+% Remove list labels.
+\renewcommand{\labelitemi}{}
+\renewcommand{\labelitemii}{}
+
+\titleformat*{\section}{\LARGE\itshape\titlerule\bfseries}
+%\titleformat*{\section}{\itshape\bfseries}
+%\titlespacing*{\section}{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+%\titleformat*{\subparagraph}{\itshape\bfseries}
+%\titlespacing{\subparagraph}{1.5em}{5pt plus 4pt minus 2pt}{0pt plus 0pt minus 0pt}
+
+%format my name in the bibliographies
+\def\FormatName#1{%
+  \noexpandarg
+  \IfSubStr*{#1}{DeBlasio}{\underline{#1}}{#1}%
+}
+  
+
+% Define bibliographies.
+\newcites{C,t,B}{Selected Publications, Theses, Book}
+
+\begin{document}
+% \setcounter{page}{4} 
+% Print title.
+\hspace{-2.5em}
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r}
+\multirow{2}{*}{\namestyle Dan F. DeBlasio, PhD } &  deblasio@cs.cmu.edu\\
+				& http://dandeblasio.com\\
+\end{tabular*}
+
+\small
+
+
+\section*{Education}
+\begin{itemize}[leftmargin=*,labelindent=5pt,itemindent=-15pt]
+\item \textbf{Doctor of Philosophy, Computer Science}
+University of Arizona \bigdot Tucson, AZ \bigdot 2016
+\begin{itemize}
+    \item Advisor: John Kececioglu.
+    \item Dissertation: ``Parameter Advising for Multiple Sequence Alignment''
+    \item Minor: Ecology and Evolutionary Biology
+\end{itemize}
+\vspace{1em}
+\item \textbf{Master of Science, Computer Science}
+University of Central Florida \bigdot Orlando, FL \bigdot 2009
+\begin{itemize}
+   \item Advisor: Shaojie Zhang
+    \item Thesis: ``New Computational Approaches to Multiple RNA Alignment and RNA Search''
+\end{itemize}
+
+\vspace{1em}
+\item \textbf{Bachelor of Science, Computer Science}
+University of Central Florida \bigdot Orlando, FL \bigdot 2007
+\end{itemize}
+
+
+
+
+\section*{Professional Experience}
+\begin{tabular}{lll}
+08/2023-- & \textbf{Assistant Teaching Professor} & \textbf{Carnegie Mellon University}\\
+				&						& School of Computer Science\\
+				&						& Ray and Stephanie Lane \\
+				&						& \hspace*{3em}Computational Biology Department\\
+\\08/2023-- & 	\textbf{Co-Assistant Director} &  \textbf{Carnegie Mellon University}	\\
+				&	\textbf{Master in Computational Biology}	& School of Computer Science\\
+				&						&  Ray and Stephanie Lane \\
+				&						& \hspace*{3em}Computational Biology Department\\
+\\05/2024-- & 	\textbf{Director} &  \textbf{Carnegie Mellon University}\\
+				&	\textbf{Integrated Master in }	& School of Computer Science\\
+				&	\hspace*{3em}\textbf{Computational Biology}	& Ray and Stephanie Lane \\
+				&						& \hspace*{3em}Computational Biology Department\\
+\\ 08/2019--07/2023 & \textbf{Assistant Professor}	& \textbf{University of Texas at El Paso}\\
+				&						& College of Engineering\\
+				&						&  Department of Computer Science\\
+\\9/2016--08/2019	& \textbf{Lane Fellow}		& \textbf{Carnegie Mellon University}\\
+				&						& School of Computer Science\\
+				&						& Computational Biology Department\\
+				
+\\8/2010--6/2016 & \textbf{Graduate Research Assistant} & \textbf{University of Arizona} \\
+				&						& College of Science\\
+				&						& Computer Science Department\\
+
+\\5/2010--8/2010 &  \textbf{Research Associate II} & \textbf{Sanford-Burnham Institute }\\
+&& \hspace*{3em}\textbf{for Medical Research}\\
+&& Orlando, FL Campus\\
+
+\\8/2007--8/2010 & \textbf{Graduate Research Assistant} & \textbf{University of Central Florida}\\
+			&								& College of Engineering and Computer Science\\
+			&								& Department of Engineering Technology\\
+\\8/2005--8/2007 & \textbf{Developer}					& \textbf{Cloudspace}\\
+			&								& Orlando, FL\\
+\end{tabular}
+
+
+
+\end{document}

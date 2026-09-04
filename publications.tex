@@ -1,4 +1,9 @@
+\DocumentMetadata{
+  lang        = en-US,
+  tagging     = on,
+}
 \documentclass[11pt]{article}
+
 
 \usepackage{graphicx}
 \usepackage[colorlinks,urlcolor=blue]{hyperref}
@@ -7,7 +12,6 @@
 \usepackage{fancyhdr}
 \usepackage[resetlabels]{multibib}
 \usepackage{tabularx, multirow}
-\usepackage{titlesec}
 \usepackage{datetime}
 \usepackage{xstring}
 \usepackage{xspace}
@@ -19,6 +23,13 @@
 
 \hyphenation{StringBio}
 
+\usepackage{hyperref}
+\hypersetup{
+  pdftitle    = {Dan F. DeBlasio, PhD -- Publications},
+  pdfauthor   = {Dan F. DeBlasio},
+  pdfsubject  = {Publications},
+  pdfkeywords = {computational biology, bioinformatics, machine learning, publications},
+}
 
 \newenvironment{hangingpar}[1]
   {\begin{list}
@@ -74,7 +85,8 @@
 \renewcommand{\labelitemi}{}
 \renewcommand{\labelitemii}{}
 
-\titleformat*{\section}{\LARGE\itshape\titlerule\bfseries}
+\usepackage{sectsty}
+\sectionfont{\LARGE\itshape\bfseries}
 
 %format my name in the bibliographies
 \def\FormatName#1{%

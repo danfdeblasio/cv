@@ -1,7 +1,5 @@
 \DocumentMetadata{
   lang        = en-US,
-  pdfversion  = 1.7,
-  pdfstandard = ua-1,
   tagging     = on,
 }
 \documentclass[10pt,letterpaper]{article}
@@ -12,7 +10,7 @@
 \usepackage{fancyhdr}
 \usepackage[resetlabels]{multibib}
 \usepackage{tabularx, multirow}
-\usepackage{titlesec}
+\tagpdfsetup{table/header-rows={1}}
 \usepackage{datetime}
 \usepackage{xstring}
 \usepackage{xspace}
@@ -22,7 +20,6 @@
 \usepackage{enumitem}
 \setitemize{itemsep=0pt}
 \setlist[itemize]{noitemsep, topsep=0pt}
-
 
 \hyphenation{StringBio}
 
@@ -47,8 +44,6 @@
     \item[]
   }
   {\end{list}}
-  
-  
 
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 \newcommand{\bigdot}{$\cdot$\xspace}
@@ -68,7 +63,6 @@
 
 \newdateformat{monthyeardate}{%
   \monthname[\THEMONTH] \THEYEAR}
-  
 
 % Turn off page numbering.
 \pagestyle{fancy}
@@ -88,33 +82,44 @@
 \renewcommand{\labelitemi}{}
 \renewcommand{\labelitemii}{}
 
-\titleformat*{\section}{\LARGE\itshape\titlerule\bfseries}
+%\usepackage{titlesec}
+%\titleformat*{\section}{\LARGE\itshape\titlerule\bfseries}
+
+\usepackage{sectsty}
+\sectionfont{\LARGE\itshape\bfseries}
+%\AddToHook{cmd/section/after}{\noindent\rule{\linewidth}{0.4pt}}
+
+\newcommand{\cvsection}[1]{%
+    \par\vspace{10pt}%
+  \noindent\rule{\linewidth}{0.4pt}\par
+  \vspace{-5.5ex}%
+  \section*{#1}%
+}
 
 %format my name in the bibliographies
 \def\FormatName#1{%
   \noexpandarg
   \IfSubStr*{#1}{DeBlasio}{\underline{#1}}{#1}%
 }
-  
 
 % Define bibliographies.
 \newcites{m,j,c,t,s,b,p}{Highlight of Most Cited Papers, Technical Publications, Preprints/In Progress, Theses, Education Related Publication, Book, Posters}
-
 
 \begin{document}
 
 % Print title.
 \hspace{-2.5em}
-\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r}
-\multirow{2}{*}{\namestyle Dan F. DeBlasio, PhD } &  dan@dandeblasio.com\\
-				& http://dandeblasio.com\\
-\end{tabular*}
+%\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r}
+%\multirow{2}{*}{\namestyle Dan F. DeBlasio, PhD } &  dan@dandeblasio.com\\
+%				& http://dandeblasio.com\\
+%\end{tabular*}
+{\noindent\namestyle Dan F. DeBlasio, PhD}\hfill
+\shortstack[r]{dan@dandeblasio.com\\http://dandeblasio.com}
 
 \small
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Education}
+\cvsection{Education}
 
 \subparagraph{Doctor of Philosophy, Computer Science}
 University of Arizona \bigdot Tucson, AZ \bigdot 2016
@@ -134,11 +139,8 @@ University of Central Florida \bigdot Orlando, FL \bigdot 2009
 \subparagraph{Bachelor of Science, Computer Science}
 University of Central Florida \bigdot Orlando, FL \bigdot 2007
 
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Professional Experience}
+\cvsection{Professional Experience}
 
 \subsection*{Carnegie Mellon University}
 \vspace{-.75em}
@@ -159,7 +161,6 @@ University of Central Florida \bigdot Orlando, FL \bigdot 2007
 %    \item Ray and Stephanie Lane Computational Biology Department, School of Computer Science
 %\end{itemize} 
 \vspace{-1em}
-
 
 \subparagraph{Lane Fellow}  9/2016--08/2019
 \begin{itemize}
@@ -206,9 +207,8 @@ University of Central Florida \bigdot Orlando, FL \bigdot 2007
 %    \item Worked on both server side and client facing development
 %\end{itemize}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Thesis Committee Contributions}
+\cvsection{Thesis Committee Contributions}
 \subsection*{CMU}
 \hspace{1.5em}\textbf{Kwanho Kim} \bigdot MSCB, 2019 
 
@@ -220,7 +220,7 @@ University of Central Florida \bigdot Orlando, FL \bigdot 2007
 \textbf{Charles Sullivan} \bigdot MSEE, 2020
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Mentorship}
+\cvsection{Mentorship}
 \subsection*{CMU}
 \hspace{1.5em}\textbf{Fiyinfoluwa Gbosibo} May--July 2017, Summer Intern at CMU
 \begin{itemize}
@@ -239,7 +239,6 @@ University of Central Florida \bigdot Orlando, FL \bigdot 2007
 \begin{itemize}
 \item Last known position: Data Scientist at FDA
 \end{itemize}
-
 
 \textbf{Hector Richart Ruiz} November 2019--May 2022, BS Computer Science at UTEP
 \begin{itemize}
@@ -266,11 +265,8 @@ University of Central Florida \bigdot Orlando, FL \bigdot 2007
 \item Last known position: PhD student at University of Connecticut 
 \end{itemize}
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Teaching Experience}
-
+\cvsection{Teaching Experience}
 
 \subparagraph{Instructor}  Carnegie Mellon University \bigdot Pittsburgh, PA
 \begin{itemize}
@@ -291,7 +287,6 @@ University of Central Florida \bigdot Orlando, FL \bigdot 2007
 	\item Algorithms for Computational Biology (CS 4364/5364), Spring 2021, 2022.
 \end{itemize}
 
-
 \subparagraph{Instructor} University of Arizona \bigdot Tucson, AZ
 \begin{itemize}
     \item Evolutionary and Functional Genomics Lab (ECOL 553L), Fall 2012.
@@ -311,10 +306,8 @@ University of Central Florida \bigdot Orlando, FL
     \item Introduction to C Programming, Fall 2006
 \end{itemize}
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Internal Service and Leadership Activities}
+\cvsection{Internal Service and Leadership Activities}
 \subsection*{CMU}
   \begin{itemize}
     \item \textbf{Coordinator}, Undergraduate Research, 2024--present
@@ -331,9 +324,8 @@ University of Central Florida \bigdot Orlando, FL
     
   \end{itemize}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Grants and Funding}
+\cvsection{Grants and Funding}
 \paragraph{National Science Foundation}  \hangindent=2em--- 
 	\textit{Travel: NSF Student Travel Grant for 2025 Great Lakes Bioinformatics Conference (GLBIO)} ---
 	Role: PI --- Amount Awarded: \$10,000 (June 2025)
@@ -350,9 +342,8 @@ University of Central Florida \bigdot Orlando, FL
 	\textit{Classification of Unresolved Space Objects from Spectro Temporal Signatures} ---
 	Role: Co-I (Velez-Reyes, PI) --- Amount awarded: \$50,000 (August 2022-January 2023)
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Panel Participation/Organization}
+\cvsection{Panel Participation/Organization}
 \begin{itemize}%[leftmargin=*,labelindent=5pt,itemindent=-15pt]
   \item \textbf{ISMB 2026 \bigdot Washington, DC, USA} \bigdot~\textit{July~2026} \bigdot Participant \\ ``Computational Biology Career Opportunities in Industry and How to Prepare for Them!''  
   \item \textbf{ISCB Student Council Symposium 2024 \bigdot  Monr\'eal, Canada} \bigdot~\textit{July~2024} \bigdot Participant \\ ``The impact of Student Council in your personal and scientific trajectory''  
@@ -362,7 +353,7 @@ University of Central Florida \bigdot Orlando, FL
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Invited Talks}
+\cvsection{Invited Talks}
 
 \begin{itemize}%[leftmargin=*,labelindent=5pt,itemindent=-15pt]
   \item \textbf{Kingston University, Computer Science Department Seminar \bigdot London, UK} \bigdot~\textit{July 2025} \bigdot ``Computation for the real world: algorithmic solutions in space and biology''
@@ -386,7 +377,7 @@ parameter advising for improved scientific discovery''
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Notable Training}
+\cvsection{Notable Training}
 \begin{itemize}
 \item\textbf{LearnLab: Computing Education Research} --- July 2024
 \item\textbf{Autism \& Mental Health Series} --- Fall 2023
@@ -472,7 +463,6 @@ parameter advising for improved scientific discovery''
 \nocitet{D09}
 \nocitep{DBBZ09p}
 
-
 %\bibliographym{deblasio}
 \bibliographyb{deblasio}
 \bibliographyt{deblasio}
@@ -482,10 +472,8 @@ parameter advising for improved scientific discovery''
 %\footnotetext[1]{editorial, not peer reviewed}
 \bibliographyp{deblasio}
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Released Software}
+\cvsection{Released Software}
 \subparagraph{Scallop Parameter Advising}						github.com/Kingsford-Group/scallopadvising
 \subparagraph{Feature-based Accuracy Estimator (Facet)} 			facet.cs.arizona.edu
 \subparagraph{Opal v3.0}										opal.cs.arizona.edu 
@@ -493,7 +481,7 @@ parameter advising for improved scientific discovery''
 \subparagraph{Profile based Multiple Fast RNA alignment (PMFastR)}	genome.ucf.edu/PMFastR 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Honors and Awards}
+\cvsection{Honors and Awards}
 
 \begin{itemize}
     \item Provosts Inclusive Teaching Fellowship (PITF), CMU Eberly Center, EY26
@@ -527,8 +515,7 @@ parameter advising for improved scientific discovery''
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-\section*{External Service and Leadership Activities}
-
+\cvsection{External Service and Leadership Activities}
 
 \subparagraph{International Society for Computational Biology}
 \begin{itemize}
@@ -623,7 +610,6 @@ parameter advising for improved scientific discovery''
     \item \textbf{Publicity Chair} \\ ACM-BCB 2020
     \item \textbf{Travel Fellowships Co-Chair}\\ GLBIO 2024, 2025
 \end{itemize}
-
 
 \subparagraph{Reviewer} 
 \begin{itemize}%[leftmargin=!,labelindent=5pt,itemindent=-15pt]
